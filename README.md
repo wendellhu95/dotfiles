@@ -14,11 +14,23 @@ git clone https://github.com/wendellhu95/dotfiles.git .dotfiles
 
 ```shell
 ln -fs .dotfiles/.vimrc .vimrc \
-	&& ln -fs .dotfiles/.zshrc .zshrc
-	&& ln -fs .dotfiles/tmux.conf .tmux.conf
+	&& ln -fs .dotfiles/.zshrc .zshrc \
+	&& ln -fs .dotfiles/.tmux.conf .tmux.conf
 ```
 
-## macOS
+### macOS
 
-## Linux / WSL
+### Linux / WSL
+
+### Common
+
+1\. Install nvm
+
+## Setup
+
+1\. SSH key
+
+```shell
+ssh-keygen
+```
 
