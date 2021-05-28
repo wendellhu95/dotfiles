@@ -15,7 +15,7 @@ git clone https://github.com/wendellhu95/dotfiles.git .dotfiles
 ```shell
 ln -fs .dotfiles/.vimrc .vimrc \
 	&& ln -fs .dotfiles/.zshrc .zshrc
-	&& ln -fs .tmux.conf/.zshrc .tmux.conf
+	&& ln -fs .dotfiles/tmux.conf .tmux.conf
 ```
 
 ## macOS
