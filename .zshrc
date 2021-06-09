@@ -106,5 +106,17 @@ export NVM_DIR="$HOME/.nvm"
 # resource
 alias resource="source ~/.zshrc"
 
-# source ~/.alias
-# source ~/.functions
+# proxy
+function unproxy() {
+	unset hostip
+	unset https_proxy
+	unset http_proxy
+}
+
+# wsl
+function wslProxy() {
+	export hostip=$(cat /etc/resolv.conf |grep -oP '(?<=nameserver\ ).*')
+	export https_proxy="http://${hostip}:7890"
+	export http_proxy="http://${hostip}:7890"
+}
+

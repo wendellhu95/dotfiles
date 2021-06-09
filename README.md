@@ -1,16 +1,24 @@
 # dotfiles
 
-## Preinstallation
+## Preinstall
 
 ### macOS
 
-### Linux / WSL
+1\. Install homebrew
+
+```shell
+/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+```
 
 ### Common
 
 1\. Install zsh and oh-my-zsh, and plugins
 
 ```shell
+# install zsh
+sudo apt install zsh # ubuntu
+brew install zsh # macOS
+
 # install oh-my-zsh
 sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 
@@ -33,6 +41,11 @@ curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
     https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 ```
 
+4\. Install tpm
+
+```shell
+git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
+```
 
 ## Installation
 
@@ -52,7 +65,7 @@ ln -fs .dotfiles/.vimrc .vimrc \
 	&& ln -fs .dotfiles/.tmux.conf .tmux.conf
 ```
 
-## Setup
+## Postinstall
 
 1\. SSH key
 
