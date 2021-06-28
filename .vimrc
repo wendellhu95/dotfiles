@@ -3,6 +3,11 @@ call plug#begin('~/.vim/plugged')
 
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
+Plug 'airblade/vim-gitgutter'
+Plug 'neoclide/coc.nvim', {'branch': 'release'}
+Plug 'scrooloose/nerdtree'
+Plug 'ctrlpvim/ctrlp.vim'
+Plug 'leafgarland/typescript-vim'
 
 call plug#end()
 
@@ -15,7 +20,6 @@ let g:airline_theme='soda'
 set mouse=a
 map <ScrollWheelUp> <C-Y>
 map <ScrollWheelDown> <C-E>
-
 set nu
 set ruler
 set novisualbell
@@ -35,6 +39,8 @@ let &t_EI.="\e[1 q" "EI = NORMAL mode (ELSE)
 "  4 -> solid underscore
 "  5 -> blinking vertical bar
 "  6 -> solid vertical bar
+
+highlight clear SignColumn " clear vim gutter background color
 
 " =========== language / syntax ===========
 syntax on
@@ -58,7 +64,24 @@ imap jj <Esc>
 
 " use ctrl-c to copy instal VISUAL mode
 vnoremap <C-c> "*y
-"
+
+" nerdtree
+let g:NERDTreeWinPos="right"
+let NERDTreeShowHidden=1
+let NERDTreeShowBookmarks=1
+let NERDTreeIgnore=['\.py[cd]$', '\~$', '\.swo$', '\.swp$', '^\.git$', '^\.hg$', '^\.svn$', '\.bzr$']
+let NERDTreeQuitOnOpen=1
+let NERDTreeChDirMode=0
+let NERDTreeMouseMode=2
+let NERDTreeKeepTreeInNewTab=1
+
+autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
+
+nnoremap <leader>n :NERDTreeFocus<CR>
+nnoremap <C-n> :NERDTree<CR>
+nnoremap <C-t> :NERDTreeToggle<CR>
+nnoremap <C-f> :NERDTreeFind<CR>
+
 " =========== misc ===========
 " auto refresh when editting .vimrc file
 autocmd BufWritePost $MYVIMRC source $MYVIMRC
