@@ -8,10 +8,11 @@ Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'scrooloose/nerdtree'
 Plug 'ctrlpvim/ctrlp.vim'
 Plug 'leafgarland/typescript-vim'
+Plug 'arcticicestudio/nord-vim'
 
 call plug#end()
 
-let g:airline_theme='soda'
+let g:airline_theme='nord'
 
 " =========== workbench / editor ===========
 
@@ -20,6 +21,7 @@ let g:airline_theme='soda'
 set mouse=a
 map <ScrollWheelUp> <C-Y>
 map <ScrollWheelDown> <C-E>
+
 set nu
 set ruler
 set novisualbell
@@ -28,6 +30,9 @@ set noerrorbells
 set autoread
 set nobackup
 set noswapfile
+set smartindent
+
+colorscheme nord
 
 " change cursor style in different mode 
 let &t_SI.="\e[5 q" "SI = INSERT mode
@@ -41,6 +46,7 @@ let &t_EI.="\e[1 q" "EI = NORMAL mode (ELSE)
 "  6 -> solid vertical bar
 
 highlight clear SignColumn " clear vim gutter background color
+highlight clear VertSplit
 
 " =========== language / syntax ===========
 syntax on
@@ -66,7 +72,6 @@ imap jj <Esc>
 vnoremap <C-c> "*y
 
 " nerdtree
-let g:NERDTreeWinPos="right"
 let NERDTreeShowHidden=1
 let NERDTreeShowBookmarks=1
 let NERDTreeIgnore=['\.py[cd]$', '\~$', '\.swo$', '\.swp$', '^\.git$', '^\.hg$', '^\.svn$', '\.bzr$']
